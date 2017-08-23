@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""NumInput2.py: Simple demo of how to check if a user input is a number."""
+"""
+NumInput.py: Simple demo to check if an input is a number. 
+Will work only on integers.
+
+"""
 
 __author__      = "Breno RdV"
 __copyright__   = "Breno RdV @ raccoon.ninja"
 __contact__     = "http://raccoon.ninja"
 __license__     = "MIT"
-__version__     = "01.000"
+__version__     = "01.001"
 __maintainer__  = "Breno RdV"
 __status__      = "Demonstration"
 
