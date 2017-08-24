@@ -25,6 +25,7 @@ base_url = "http://api.postmon.com.br/v1/cep/%s"
 cep_num = "30170010" #Google's office in Belo Horizonte, MG. Brazil.
 
 
+#In progress... i'll update this file later.
 
 
 response = requests.get(base_url % cep_num)
