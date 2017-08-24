@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Food.py: Just a sample file with a function."""
+"""
+Food.py: Just a sample file with a function.
+This material is part of this post:
+http://raccoon.ninja/pt/dev-pt/python-importando-todos-os-arquivos-de-um-diretorio/
+
+"""
 
 def get_food():
     return "bacon!"
