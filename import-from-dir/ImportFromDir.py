@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""ImportFromDir.py: Demonstration of how to import all files from a folder."""
+"""
+ImportFromDir.py: Demonstration of how to import all files from a folder.
+This material is part of this post:
+http://raccoon.ninja/pt/dev-pt/python-importando-todos-os-arquivos-de-um-diretorio/
+
+"""
 
 __author__      = "Breno RdV"
 __copyright__   = "Breno RdV @ raccoon.ninja"
