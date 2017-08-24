@@ -14,7 +14,7 @@ __author__      = "Breno RdV"
 __copyright__   = "Breno RdV @ raccoon.ninja"
 __contact__     = "http://raccoon.ninja"
 __license__     = "MIT"
-__version__     = "01.000"
+__version__     = "01.001"
 __maintainer__  = "Breno RdV"
 __status__      = "Demonstration"
 
