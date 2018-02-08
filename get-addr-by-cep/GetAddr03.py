@@ -29,7 +29,7 @@ cep_num = ""
 print("Input your CEP number or press Enter to use our default test value.")
 print("To exit, type -1 and press Enter.")
 while not cep_num.isdigit() and cep_num != "-1":
-    cep_num = input("Please, enter your CEP (just the numbers): ")
+    cep_num = input("Please, enter your CEP (just numbers): ")
     if cep_num.strip() == "":
         print("Using default test value...")
         cep_num = google_cep_num
