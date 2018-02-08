@@ -30,14 +30,15 @@ print("Input your CEP number or press Enter to use our default test value.")
 print("To exit, type -1 and press Enter.")
 while cep_num != "-1":
     cep_num = input("Please, enter your CEP (just numbers): ")
+    should_exit = cep_num == "-1"
     if cep_num.strip() == "":
         print("Using default test value...")
         cep_num = google_cep_num
-    elif not cep_num.isdigit():
+    elif not cep_num.isdigit() and not should_exit:
         print("Please, enter CEP number... just the numbers.")
         continue
 
-    if cep_num != "-1":
+    if not should_exit:
         response = requests.get(base_url % cep_num)
         if response.status_code == 200:
             data = response.json()
