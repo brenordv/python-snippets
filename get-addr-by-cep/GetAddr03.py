@@ -28,20 +28,22 @@ google_cep_num = "30170010" #Google's office in Belo Horizonte, MG. Brazil.
 cep_num = ""
 print("Input your CEP number or press Enter to use our default test value.")
 print("To exit, type -1 and press Enter.")
-while not cep_num.isdigit() and cep_num != "-1":
+while cep_num != "-1":
     cep_num = input("Please, enter your CEP (just numbers): ")
     if cep_num.strip() == "":
         print("Using default test value...")
         cep_num = google_cep_num
+    elif not cep_num.isdigit():
+        print("Please, enter CEP number... just the numbers.")
 
-if cep_num != "-1":
-    response = requests.get(base_url % cep_num)
-    if response.status_code == 200:
-        data = response.json()
-        print(data)
+    if cep_num != "-1":
+        response = requests.get(base_url % cep_num)
+        if response.status_code == 200:
+            data = response.json()
+            print(data)
+        else:
+            print("Something went wrong.\r\nStatus code: %s" % response.status_code)
+            print("Find more info about this error at: https://www.google.com.br/search?q=http+status+code+%s" % response.status_code)
+    
     else:
-        print("Something went wrong.\r\nStatus code: %s" % response.status_code)
-        print("Find more info about this error at: https://www.google.com.br/search?q=http+status+code+%s" % response.status_code)
-
-else:
-    print("Cancelling operation.")
+        print("Cancelling operation.")
