@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-GetAddr02.py: How to get a address using a webservice and a CEP number.
+GetAddr03.py: How to get a address using a webservice and a CEP number.
 This only works in Brazil and may not work for every CEP. The official database,
 if i'm not mistaken, is owned by the Post Office (Correios) and it's not free.
 
