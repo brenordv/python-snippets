@@ -35,6 +35,7 @@ while cep_num != "-1":
         cep_num = google_cep_num
     elif not cep_num.isdigit():
         print("Please, enter CEP number... just the numbers.")
+        continue
 
     if cep_num != "-1":
         response = requests.get(base_url % cep_num)
