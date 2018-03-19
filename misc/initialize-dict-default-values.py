@@ -3,6 +3,7 @@
 
 """
 initialize-dict-default-values.py: Simple demo of how to initialize dictionaries with default values.
+Attention: this function will probably not work in Python 3.4 or lower.
 """
 
 __author__      = "Breno RdV"
