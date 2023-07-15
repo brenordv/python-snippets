@@ -1,0 +1,188 @@
+{
+  "API Management Service Instance": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 80 characters",
+    "Example": "apim-navigator-prod"
+  },
+  "Azure Analysis Services": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 63 characters",
+    "Example": "asnavigatorprod | asemissionsdev"
+  },
+  "Azure Cache for Redis Instance": {
+    "Naming convention": "Alphanumeric only; no special characters allowed",
+    "Length": "1 to 63 characters",
+    "Example": "redis-navigator-prod | redis-emissions-dev"
+  },
+  "Azure Cognitive Search": {
+    "Naming convention": "Alphanumeric only; no special characters allowed",
+    "Length": "2 to 60 characters",
+    "Example": "srch-navigator-prod | srch-emissions-dev"
+  },
+  "Azure Cognitive Services": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 24 characters",
+    "Example": "cog-navigator-prod | cog-emissions-dev"
+  },
+  "Azure Container Registry": {
+    "Naming convention": "Alphanumeric only; no special characters allowed",
+    "Length": "5 to 50 characters",
+    "Example": "crnavigatorprod001"
+  },
+  "Azure Cosmos DB Database": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 44 characters",
+    "Example": "cosmos-navigator-prod | cosmos-emissions-dev"
+  },
+  "Azure Data Factory": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 63 characters",
+    "Example": "adf-navigator-prod | adf-emissions-dev"
+  },
+  "Azure Machine Learning Workspace": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 32 characters",
+    "Example": "mlw-navigator-prod | mlw-emissions-dev"
+  },
+  "Azure SQL Database": {
+    "Naming convention": "Alphanumeric and special characters (_); no hyphens allowed",
+    "Length": "1 to 128 characters",
+    "Example": "sqldb-users-prod | sqldb-users-dev"
+  },
+  "Azure StorSimple": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 63 characters",
+    "Example": "ssimpnavigatorprod | ssimpemissionsdev"
+  },
+  "Azure Stream Analytics": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 63 characters",
+    "Example": "asa-navigator-prod | asa-emissions-dev"
+  },
+  "Data Lake Storage Account": {
+    "Naming convention": "Lowercase alphanumeric only; no special characters allowed",
+    "Length": "3 to 24 characters",
+    "Pattern": "dls<project, app or service><environment>",
+    "Example": "dlsnavigatorprod | dlsemissionsdev"
+  },
+  "DNS Label": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 63 characters",
+    "Example": "dnslabel1"
+  },
+  "Function App": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 60 characters",
+    "Example": "functionapp1"
+  },
+  "IoT Hub": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "3 to 50 characters",
+    "Example": "iothub1"
+  },
+  "Load Balancer": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 80 characters",
+    "Example": "loadbalancer1"
+  },
+  "Local Network Gateway": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 80 characters",
+    "Example": "localnetwork1"
+  },
+  "Managed Identity": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 128 characters",
+    "Example": "managedidentity1"
+  },
+  "Management Group": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 90 characters",
+    "Example": "managementgroup1"
+  },
+  "Network Interface (NIC)": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 80 characters",
+    "Example": "nic1"
+  },
+  "Network Security Group (NSG)": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 80 characters",
+    "Example": "nsg1"
+  },
+  "Public IP Address": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 80 characters",
+    "Example": "publicip1"
+  },
+  "Resource Group": {
+    "Naming convention": "Alphanumeric, underscore, parenthesis, hyphen, and period; no other special characters allowed",
+    "Length": "1 to 90 characters",
+    "Example": "resource_group_1"
+  },
+  "Route Table": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 80 characters",
+    "Example": "routetable1"
+  },
+  "Service Bus": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "6 to 50 characters",
+    "Example": "servicebus1"
+  },
+  "Service Bus Queue": {
+    "Naming convention": "Alphanumeric, hyphen, and underscore; no other special characters allowed",
+    "Length": "1 to 260 characters",
+    "Example": "servicebusqueue_1"
+  },
+  "Service Bus Topic": {
+    "Naming convention": "Alphanumeric, hyphen, and underscore; no other special characters allowed",
+    "Length": "1 to 260 characters",
+    "Example": "servicebustopic_1"
+  },
+  "Site-to-Site Connection": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 80 characters",
+    "Example": "sitetosite1"
+  },
+  "Storage Account (general use)": {
+    "Naming convention": "Lowercase alphanumeric only; no special characters allowed",
+    "Length": "3 to 24 characters",
+    "Example": "storageaccount1"
+  },
+  "Subscription": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 90 characters",
+    "Example": "subscription1"
+  },
+  "Subnet": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 80 characters",
+    "Example": "subnet1"
+  },
+  "Virtual Machine": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 15 characters for Windows, 1 to 64 for Linux",
+    "Example": "vm1"
+  },
+  "Virtual Network": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 64 characters",
+    "Example": "vnet1"
+  },
+  "Virtual Network Gateway": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 80 characters",
+    "Example": "vnetgateway1"
+  },
+  "VPN Connection": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "1 to 128 characters",
+    "Example": "vpnconnection1"
+  },
+  "Web App": {
+    "Naming convention": "Alphanumeric and hyphen; no special characters allowed",
+    "Length": "2 to 60 characters",
+    "Example": "webapp1"
+  }
+}
