@@ -170,7 +170,15 @@ def generate_markdown_cheatsheet_list(data):
     return "\n".join(lines)
 
 
+def sanitize(text):
+    return text.replace("<", "&lt;").replace(">", "&gt;")
+
+
 def persist_final_markdown(url, markdown_table, markdown_list):
+    # Sanitize < and > characters, so they are rendered correctly in GitHub
+    markdown_table = sanitize(markdown_table)
+    markdown_list = sanitize(markdown_list)
+
     with open("README.md", "w") as f:
         f.write(f"# Azure Resource Naming Convention\n\n")
         f.write(f"## Cheatsheet\n\n")
