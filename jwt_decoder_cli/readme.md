@@ -1,5 +1,6 @@
 # Attention
 I recreated this tool using Rust: https://github.com/brenordv/rusted-toolbox
+Improved functionality, and faster. :) 
 
 # JWT Token Decoder (`jwtr.py`)
 
