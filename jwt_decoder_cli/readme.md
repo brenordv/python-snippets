@@ -1,6 +1,5 @@
-Sure! Here is a README for the `jwtr.py` script, including instructions on how to make it executable on Linux or macOS.
-
----
+# Attention
+I recreated this tool using Rust: https://github.com/brenordv/rusted-toolbox
 
 # JWT Token Decoder (`jwtr.py`)
 
