@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-extract_lines.py: Demo of how to use termcolor to print using colors.
+extract_lines.py: Demo of how to extract lines from a file.
+
+Note: I created a tool in Rust that does the same thing: https://github.com/brenordv/rusted-toolbox
 """
 
 __author__      = "Breno RdV"
