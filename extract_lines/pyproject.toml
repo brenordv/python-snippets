@@ -1,0 +1,6 @@
+[project]
+name = "extract-lines"
+version = "1.0.0"
+description = "Extract lines matching a search term from a file and write them to another file."
+requires-python = ">=3.10"
+dependencies = []

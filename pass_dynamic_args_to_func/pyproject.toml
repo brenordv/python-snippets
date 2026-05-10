@@ -1,0 +1,6 @@
+[project]
+name = "pass-dynamic-args-to-func"
+version = "1.0.0"
+description = "Demos showing different ways to pass dynamic arguments to Python functions."
+requires-python = ">=3.10"
+dependencies = []

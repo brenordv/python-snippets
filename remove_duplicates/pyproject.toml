@@ -1,0 +1,6 @@
+[project]
+name = "remove-duplicates"
+version = "1.0.0"
+description = "Two methods for removing duplicate dictionaries from a list in Python."
+requires-python = ">=3.10"
+dependencies = []

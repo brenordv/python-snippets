@@ -1,10 +1,9 @@
 [project]
 name = "controlling-servo-motors"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "Control hobby servos using a Raspberry Pi and PCA9685 PWM driver via I2C."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
-    "adafruit-circuitpython-servokit>=1.3.22",
-    "uv>=0.9.5",
+    "adafruit-circuitpython-servokit==1.3.22",
 ]

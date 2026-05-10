@@ -1,0 +1,6 @@
+[project]
+name = "demo-terminal-colors"
+version = "1.0.0"
+description = "Demonstration of ANSI terminal color codes for foreground and background text."
+requires-python = ">=3.10"
+dependencies = []

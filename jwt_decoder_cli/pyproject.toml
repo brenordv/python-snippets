@@ -1,0 +1,9 @@
+[project]
+name = "jwt-decoder-cli"
+version = "1.0.0"
+description = "CLI tool to decode and inspect JWT tokens without signature verification."
+requires-python = ">=3.10"
+dependencies = [
+    "PyJWT==2.10.1",
+    "colorama==0.4.6",
+]

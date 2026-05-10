@@ -1,0 +1,9 @@
+[project]
+name = "print-in-color"
+version = "1.0.0"
+description = "Demos of colored terminal output using sty, termcolor, and raw ANSI codes."
+requires-python = ">=3.10"
+dependencies = [
+    "sty>=1.0.6",
+    "termcolor>=3.1.0",
+]

@@ -1,0 +1,6 @@
+[project]
+name = "split-strip"
+version = "1.0.0"
+description = "Two approaches to splitting a string and stripping whitespace: a loop vs. a list comprehension."
+requires-python = ">=3.10"
+dependencies = []

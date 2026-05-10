@@ -1,0 +1,6 @@
+[project]
+name = "elapsed-time"
+version = "1.0.0"
+description = "Utility to compute and display formatted elapsed time."
+requires-python = ">=3.10"
+dependencies = []

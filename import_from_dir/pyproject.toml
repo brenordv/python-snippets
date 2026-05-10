@@ -1,0 +1,6 @@
+[project]
+name = "import-from-dir"
+version = "1.0.0"
+description = "Demonstration of importing modules from a directory using Python packages and __init__.py."
+requires-python = ">=3.10"
+dependencies = []

@@ -1,0 +1,10 @@
+[project]
+name = "get-computer-info"
+version = "1.0.0"
+description = "Collect basic system health metrics (CPU, memory, disk, network) and publish them to an MQTT broker."
+requires-python = ">=3.10"
+dependencies = [
+    "psutil==5.9",
+    "paho-mqtt==1.6",
+    "simple-log-factory==1.0.0",
+]

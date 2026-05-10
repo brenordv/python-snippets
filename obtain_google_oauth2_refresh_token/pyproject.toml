@@ -1,0 +1,8 @@
+[project]
+name = "obtain-google-oauth2-refresh-token"
+version = "1.0.0"
+description = "Exchange a Google OAuth2 authorization code for a refresh token."
+requires-python = ">=3.10"
+dependencies = [
+    "requests==2.33.1",
+]

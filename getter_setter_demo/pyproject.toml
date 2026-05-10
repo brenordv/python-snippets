@@ -1,0 +1,6 @@
+[project]
+name = "getter-setter-demo"
+version = "1.0.0"
+description = "Demonstration of Python property decorators for getter/setter validation and change tracking."
+requires-python = ">=3.10"
+dependencies = []

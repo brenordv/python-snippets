@@ -1,69 +1,57 @@
-# -*- coding: utf-8 -*-
+"""Batch-rename files matching a three-part naming pattern.
+
+Renames files of the form 'Part1 - Part2 - Part3.ext' to 'Part1__Part2.ext'
+(with spaces replaced by underscores) in the specified directory.
+"""
+
+from __future__ import annotations
+
 import os
 import re
+from pathlib import Path
 
-"""
-rename_file.py: This utility provides a Python function rename_files() to rename all files in a specified directory 
-that match a particular pattern. 
-
-"""
-
-__author__ = "Breno RdV"
-__copyright__ = "Breno RdV @ raccoon.ninja"
-__contact__ = "https://raccoon.ninja"
-__license__ = "MIT"
-__version__ = "1.0.0"
-__maintainer__ = "Breno RdV"
-__status__ = "Demonstration"
+PATTERN = re.compile(r".+ - .+ - .+\..+")
 
 
-def rename_files(path, dry_run=True):
-    """
-    This function renames all files in the specified path that match the pattern 'First part - Second part - Third part.<any_extension>'.
-    The renamed files have the ' - Third part' removed from their names.
+def rename_files(path: str | Path, *, dry_run: bool = True) -> None:
+    """Rename files that match the three-part pattern.
+
+    Files matching 'A - B - C.ext' are renamed to 'A__B.ext' with spaces
+    replaced by underscores.
 
     Args:
-    path (str): The directory path where the files to be renamed are located.
-    dry_run (bool): If True, the function will only print the changes that would be made, without renaming any files.
-
-    Returns:
-    None
+        path: Directory containing the files to rename.
+        dry_run: If True, only print what would be renamed without making changes.
     """
+    directory = Path(path)
 
-    # Loop through each file in the specified directory
-    for filename in os.listdir(path):
-        # Check if the filename matches the pattern 'First part - Second part - Third part.<any_extension>'
-        if not re.match(r'.* - .* - .*\..*', filename):
+    for filename in os.listdir(directory):
+        if not PATTERN.match(filename):
             continue
 
-        # Split the filename into parts
-        parts = filename.split(' - ')  # Split by ' - '
-
-        # Check if the filename has at least 3 parts
+        parts = filename.split(" - ")
         if len(parts) < 3:
-            # This should not be necessary, considering that the filename was matched by the regex above.
-            print(f"File '{filename}' does not match the pattern: First part - Second part - Third part.<any_extension>")
+            print(f"Skipping '{filename}': does not have 3 parts.")
             continue
 
-        # Get the file extension from the third part
-        extension = parts[-1].split('.', 1)[1]
+        # Extract extension from the last part
+        extension = parts[-1].split(".", 1)[1]
+        new_name = f"{parts[0]}__{parts[1]}.{extension}".replace(" ", "_")
 
-        # Construct the new filename using the first two parts and the extension
-        # Replace spaces with underscores and add '__' between the first and second parts
-        new_name = f'{parts[0]}__{parts[1]}.{extension}'.replace(' ', '_')
+        old_file = directory / filename
+        new_file = directory / new_name
 
-        # Construct absolute paths for the old and new filenames
-        old_file = os.path.join(path, filename)
-        new_file = os.path.join(path, new_name)
-
-        # If this is a dry run, just print the changes that would be made
         if dry_run:
-            print(f'Would rename: {old_file} -> {new_file}')
-
+            print(f"Would rename: {old_file} -> {new_file}")
         else:
-            # Otherwise, rename the file
-            os.rename(old_file, new_file)
+            old_file.rename(new_file)
+            print(f"Renamed: {old_file} -> {new_file}")
 
 
-if __name__ == '__main__':
-    rename_files(path="c:\\path\\to\\files", dry_run=True)
+def main() -> None:
+    """Run the rename utility in dry-run mode with an example path."""
+    rename_files(path="c:/path/to/files", dry_run=True)
+
+
+if __name__ == "__main__":
+    main()

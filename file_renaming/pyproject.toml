@@ -1,0 +1,6 @@
+[project]
+name = "file-renaming"
+version = "1.0.0"
+description = "Batch-rename files matching a three-part naming pattern."
+requires-python = ">=3.10"
+dependencies = []

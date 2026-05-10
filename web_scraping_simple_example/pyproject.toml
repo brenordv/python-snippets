@@ -1,0 +1,10 @@
+[project]
+name = "web-scraping-simple-example"
+version = "1.0.0"
+description = "Scrape Azure resource naming conventions and generate a Markdown cheatsheet."
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4==4.13.4",
+    "requests==2.33.1",
+    "tabulate==0.9.0",
+]

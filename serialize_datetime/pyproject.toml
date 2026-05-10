@@ -1,0 +1,6 @@
+[project]
+name = "serialize-datetime"
+version = "1.0.0"
+description = "Demonstrate how to serialize datetime objects to JSON using a custom default handler."
+requires-python = ">=3.10"
+dependencies = []

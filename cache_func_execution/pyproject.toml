@@ -1,0 +1,6 @@
+[project]
+name = "cache-func-execution"
+version = "1.0.0"
+description = "Benchmark comparing cached vs uncached Fibonacci computation using functools.cache."
+requires-python = ">=3.10"
+dependencies = []

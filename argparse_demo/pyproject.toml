@@ -1,0 +1,6 @@
+[project]
+name = "argparse-demo"
+version = "1.0.0"
+description = "Demonstration of argparse usage with various argument types."
+requires-python = ">=3.10"
+dependencies = []

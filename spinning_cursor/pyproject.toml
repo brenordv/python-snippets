@@ -1,0 +1,6 @@
+[project]
+name = "spinning-cursor"
+version = "1.0.0"
+description = "Simple spinning cursor animation for terminal output."
+requires-python = ">=3.10"
+dependencies = []

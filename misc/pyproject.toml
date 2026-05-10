@@ -1,0 +1,6 @@
+[project]
+name = "misc-snippets"
+version = "1.0.0"
+description = "Miscellaneous Python snippets: version checking and dictionary initialization."
+requires-python = ">=3.10"
+dependencies = []

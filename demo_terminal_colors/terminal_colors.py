@@ -1,25 +1,38 @@
-# -*- coding: utf-8 -*-
+"""Demonstration of ANSI terminal color codes for foreground and background text."""
+
+from __future__ import annotations
+
+RESET = "\033[0m"
+
+COLORS: list[tuple[str, int, int]] = [
+    ("Black",         30,  40),
+    ("Red",           31,  41),
+    ("Green",         32,  42),
+    ("Yellow",        33,  43),
+    ("Blue",          34,  44),
+    ("Magenta",       35,  45),
+    ("Cyan",          36,  46),
+    ("Light Gray",    37,  47),
+    ("Dark Gray",     90, 100),
+    ("Light Red",     91, 101),
+    ("Light Green",   92, 102),
+    ("Light Yellow",  93, 103),
+    ("Light Blue",    94, 104),
+    ("Light Magenta", 95, 105),
+    ("Light Cyan",    96, 106),
+    ("White",         97, 107),
+]
 
 
-def main():
-	print('\033[0;0m**Black (30) \n\033[1;30mForeground text\n\033[1;40mBackground text')
-	print('\033[0;0m**Red (31) \n\033[1;31mForeground text\n\033[1;41mBackground text')
-	print('\033[0;0m**Green (32) \n\033[1;32mForeground text\n\033[1;42mBackground text')
-	print('\033[0;0m**Yellow (33) \n\033[1;33mForeground text\n\033[1;43mBackground text')
-	print('\033[0;0m**Blue (34) \n\033[1;34mForeground text\n\033[1;44mBackground text')
-	print('\033[0;0m**Magenta (35) \n\033[1;35mForeground text\n\033[1;45mBackground text')
-	print('\033[0;0m**Cyan (36) \n\033[1;36mForeground text\n\033[1;46mBackground text')
-	print('\033[0;0m**Light Gray (37) \n\033[1;37mForeground text\n\033[1;47mBackground text')
-	print('\033[0;0m**Dark Gray (90) \n\033[1;90mForeground text\n\033[1;100mBackground text')
-	print('\033[0;0m**Light Red (91) \n\033[1;91mForeground text\n\033[1;101mBackground text')
-	print('\033[0;0m**Light Green (92) \n\033[1;92mForeground text\n\033[1;102mBackground text')
-	print('\033[0;0m**Light Yellow (93) \n\033[1;93mForeground text\n\033[1;103mBackground text')
-	print('\033[0;0m**Light Blue (94) \n\033[1;94mForeground text\n\033[1;104mBackground text')
-	print('\033[0;0m**Light Magenta (95) \n\033[1;95mForeground text\n\033[1;105mBackground text')
-	print('\033[0;0m**Light Cyan (96) \n\033[1;96mForeground text\n\033[1;106mBackground text')
-	print('\033[0;0m**White (97) \n\033[1;97mForeground text\n\033[1;107mBackground text')
+def main() -> None:
+    """Print each ANSI color with foreground and background samples."""
+    for name, fg_code, bg_code in COLORS:
+        print(
+            f"{RESET}** {name} ({fg_code})\n"
+            f"\033[1;{fg_code}mForeground text{RESET}\n"
+            f"\033[1;{bg_code}mBackground text{RESET}"
+        )
 
 
-
-if __name__ == '__main__':
-	main()
+if __name__ == "__main__":
+    main()

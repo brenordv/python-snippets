@@ -1,0 +1,8 @@
+[project]
+name = "xml-using-xpath"
+version = "1.0.0"
+description = "Demo of extracting XML data using XPath with stdlib xml.etree and lxml."
+requires-python = ">=3.10"
+dependencies = [
+    "lxml>=5.4.0",
+]

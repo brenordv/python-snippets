@@ -1,0 +1,6 @@
+[project]
+name = "get-path"
+version = "1.0.0"
+description = "Demo of retrieving the current script's directory and a module's directory at runtime."
+requires-python = ">=3.10"
+dependencies = []

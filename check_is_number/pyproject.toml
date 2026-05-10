@@ -1,0 +1,6 @@
+[project]
+name = "check-is-number"
+version = "1.0.0"
+description = "Two approaches for validating whether user input is a number."
+requires-python = ">=3.10"
+dependencies = []

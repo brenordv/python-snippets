@@ -1,0 +1,10 @@
+[project]
+name = "openai-generate-image-and-resize"
+version = "1.0.0"
+description = "Generate images with OpenAI DALL-E and create resized variants using Pillow."
+requires-python = ">=3.10"
+dependencies = [
+    "openai==1.82.0",
+    "Pillow==11.2.1",
+    "requests==2.33.1",
+]

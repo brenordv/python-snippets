@@ -1,0 +1,6 @@
+[project]
+name = "kaprekar-routine"
+version = "1.0.0"
+description = "Demonstrate the Kaprekar Routine that converges any 4-digit number to 6174."
+requires-python = ">=3.10"
+dependencies = []
