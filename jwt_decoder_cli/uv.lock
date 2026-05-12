@@ -22,8 +22,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "colorama", specifier = ">=0.4.6" },
-    { name = "pyjwt", specifier = ">=2.10.1" },
+    { name = "colorama", specifier = "==0.4.6" },
+    { name = "pyjwt", specifier = "==2.12.1" },
 ]
 
 [[package]]

@@ -4,5 +4,5 @@ version = "1.0.0"
 description = "Progressive examples of looking up Brazilian addresses by CEP (postal code) via a public API."
 requires-python = ">=3.10"
 dependencies = [
-    "requests==2.33.1",
+    "requests==2.34.0",
 ]
