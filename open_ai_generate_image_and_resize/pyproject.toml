@@ -6,5 +6,5 @@ requires-python = ">=3.10"
 dependencies = [
     "openai==1.82.0",
     "Pillow==12.2.0",
-    "requests==2.34.0",
+    "requests==2.34.2",
 ]

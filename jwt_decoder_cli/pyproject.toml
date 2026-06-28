@@ -4,6 +4,6 @@ version = "1.0.0"
 description = "CLI tool to decode and inspect JWT tokens without signature verification."
 requires-python = ">=3.10"
 dependencies = [
-    "PyJWT==2.12.1",
+    "PyJWT==2.13.0",
     "colorama==0.4.6",
 ]

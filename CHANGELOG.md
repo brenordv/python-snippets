@@ -1,3 +1,6 @@
+# v5
+Updated dependencies to fix security vulnerabilities
+
 # v4
 Added the spritesheet collage snippet.
 
