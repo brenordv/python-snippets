@@ -5,4 +5,6 @@ description = "Exchange a Google OAuth2 authorization code for a refresh token."
 requires-python = ">=3.10"
 dependencies = [
     "requests==2.34.2",
+    # Not used directly. Just to fix it while requests don't catch up to CVE-2024-3651
+    "idna==3.18"
 ]

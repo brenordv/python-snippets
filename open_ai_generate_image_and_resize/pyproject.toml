@@ -7,4 +7,6 @@ dependencies = [
     "openai==1.82.0",
     "Pillow==12.2.0",
     "requests==2.34.2",
+    # Not used directly. Just to fix it while requests don't catch up to CVE-2024-3651
+    "idna==3.18"
 ]
