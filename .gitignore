@@ -1,10 +1,12 @@
-**/copy*.bat
+!.pixi/config.toml
 *$py.class
+**/copy*.bat
 *.aof
 *.cover
 *.egg
 *.egg-info/
 *.iws
+*.lcov
 *.log
 *.manifest
 *.mo
@@ -21,6 +23,7 @@
 .Python
 .abstra/
 .cache
+.claude/
 .coverage
 .coverage.*
 .dmypy.json
@@ -31,6 +34,7 @@
 .idea/
 .idea/**/aws.xml
 .idea/**/contentModel.xml
+.idea/**/copilot.data.migration.*.xml
 .idea/**/dataSources.ids
 .idea/**/dataSources.local.xml
 .idea/**/dataSources/
@@ -51,6 +55,7 @@
 .idea/caches/build_file_checksums.ser
 .idea/httpRequests
 .idea/replstate.xml
+.idea/sonarlint.xml
 .idea/sonarlint.xml # see https://community.sonarsource.com/t/is-the-file-idea-idea-idea-sonarlint-xml-intended-to-be-under-source-control/121119
 .idea/sonarlint/
 .idea_modules/
@@ -62,6 +67,7 @@
 .pdm-python
 .pdm.toml
 .pixi
+.pixi/*
 .pybuilder/
 .pypirc
 .pyre/
@@ -87,6 +93,7 @@ activemq-data/
 atlassian-ide-plugin.xml
 build/
 celerybeat-schedule
+celerybeat-schedule*
 celerybeat.pid
 cmake-build-*/
 com_crashlytics_export_strings.xml
@@ -127,6 +134,7 @@ rabbitmq/
 sdist/
 share/python-wheels/
 target/
+tempCodeRunnerFile.py
 var/
 venv.bak/
 venv/

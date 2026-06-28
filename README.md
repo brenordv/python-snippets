@@ -59,6 +59,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 | [serialize_datetime](serialize_datetime/)                                 | Serialize datetime objects to JSON                                       |
 | [spinning_cursor](spinning_cursor/)                                       | Spinning cursor animation for terminal output                            |
 | [split_strip](split_strip/)                                               | Split a string and strip whitespace: loop vs comprehension               |
+| [spritesheet_collage](spritesheet_collage/)                               | Process a spritesheet, and extract and stich frames together             |
 | [web_scraping_simple_example](web_scraping_simple_example/)               | Scrape Azure resource naming conventions to Markdown                     |
 | [xml_using_xpath](xml_using_xpath/)                                       | Extract XML data using XPath with xml.etree and lxml                     |
 

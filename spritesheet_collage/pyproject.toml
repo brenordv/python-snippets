@@ -1,0 +1,9 @@
+[project]
+name = "spritesheet-collage"
+version = "1.0.0"
+description = "A quick and easy way to process a spritesheet, and extract and stich frames together"
+requires-python = ">=3.10"
+dependencies = [
+    "Pillow==12.2.0",
+]
+
