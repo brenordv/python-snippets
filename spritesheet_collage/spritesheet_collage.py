@@ -180,6 +180,23 @@ def frame_box(col: int, row: int, geom: Geometry) -> tuple[int, int, int, int]:
     return left, top, left + geom.frame_x, top + geom.frame_y
 
 
+def all_grid_frames(grid: tuple[int, int]) -> list[tuple[int, int]]:
+    """Return every ``(col, row)`` cell of the grid in row-major (reading) order.
+
+    Row-major order (top row left-to-right, then the next row down) is the order
+    frames are read out of a sheet, so the extracted frame numbers and any 1-based
+    collage references line up with the on-sheet layout.
+
+    Args:
+        grid: The ``(n_cols, n_rows)`` grid size.
+
+    Returns:
+        A ``[(0, 0), (1, 0), ..., (n_cols - 1, n_rows - 1)]`` coordinate list.
+    """
+    n_cols, n_rows = grid
+    return [(col, row) for row in range(n_rows) for col in range(n_cols)]
+
+
 def safe_prefix(prefix: str) -> str:
     """Validate that a filename prefix is a single path component.
 
@@ -262,6 +279,18 @@ def open_spritesheet(path: Path) -> Image.Image:
         raise ValueError(f"Could not read spritesheet {path}: {exc}")
 
 
+def grid_of(spritesheet: Path, geom: Geometry) -> tuple[int, int]:
+    """Open the spritesheet and return its ``(n_cols, n_rows)`` grid.
+
+    Used when resolving ``--all-frames``, where the frame list can only be built
+    once the sheet dimensions are known. Raises ``ValueError`` (via
+    ``open_spritesheet``/``compute_grid``) if the sheet is unreadable or the
+    geometry does not divide it into whole frames.
+    """
+    image = open_spritesheet(spritesheet)
+    return compute_grid(image.width, image.height, geom)
+
+
 # --------------------------------------------------------------------------- #
 # Output
 # --------------------------------------------------------------------------- #
@@ -320,6 +349,11 @@ def _get_command_line_arguments() -> argparse.Namespace:
     parser.add_argument("--sep-x", type=int, default=0, help="Horizontal gap between frames (default 0).")
     parser.add_argument("--sep-y", type=int, default=0, help="Vertical gap between frames (default 0).")
     parser.add_argument("--frames", help='Frames to cut, e.g. "[[0,0],[1,0]]".')
+    parser.add_argument(
+        "--all-frames",
+        action="store_true",
+        help="Extract every frame in the grid, row-major (overrides --frames).",
+    )
     parser.add_argument("--collage", help='1-based stitch sequence, e.g. "[1,2,3,2]".')
     parser.add_argument(
         "--save-individual",
@@ -336,9 +370,10 @@ def _get_command_line_arguments() -> argparse.Namespace:
 
 def _has_all_required(args: argparse.Namespace) -> bool:
     """Return True when every required value is present on the command line."""
-    return all(
+    frames_specified = args.frames is not None or args.all_frames
+    return frames_specified and all(
         value is not None
-        for value in (args.spritesheet, args.frame_x, args.frame_y, args.frames)
+        for value in (args.spritesheet, args.frame_x, args.frame_y)
     )
 
 
@@ -360,7 +395,12 @@ def _resolve_from_args(args: argparse.Namespace) -> Config:
     if not spritesheet.is_file():
         raise ValueError(f"Spritesheet not found: {spritesheet}")
 
-    frames = parse_frames(args.frames)
+    if args.all_frames:
+        if args.frames:
+            print("Note: --all-frames overrides --frames.", file=sys.stderr)
+        frames = all_grid_frames(grid_of(spritesheet, geometry))
+    else:
+        frames = parse_frames(args.frames)
     collage = parse_collage(args.collage or "", len(frames))
     save_individual = args.save_individual
     if not save_individual and not collage:
@@ -418,7 +458,19 @@ def _resolve_interactive(args: argparse.Namespace) -> Config:
     sep_y = _prompt_with(_non_negative_int, "Separation Y (px)", str(args.sep_y))
     geometry = Geometry(frame_x, frame_y, margin_x, margin_y, sep_x, sep_y)
 
-    frames = _prompt_with(parse_frames, "Frames to cut, e.g. [[0,0],[1,0]]", args.frames)
+    extract_all = _prompt_with(
+        _yes_no, "Extract all frames? (y/n)", "y" if args.all_frames else "n"
+    )
+    if extract_all:
+        try:
+            frames = all_grid_frames(grid_of(Path(spritesheet), geometry))
+            print(f"  Extracting all {len(frames)} frame(s) from the grid.")
+        except ValueError as exc:
+            print(f"  {exc}", file=sys.stderr)
+            print("  Falling back to manual frame selection.", file=sys.stderr)
+            extract_all = False
+    if not extract_all:
+        frames = _prompt_with(parse_frames, "Frames to cut, e.g. [[0,0],[1,0]]", args.frames)
     collage = _prompt_with(
         lambda raw: parse_collage(raw, len(frames)),
         "Collage sequence (1-based, blank to skip), e.g. [1,2,3,2]",

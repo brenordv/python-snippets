@@ -6,6 +6,7 @@ from PIL import Image
 
 from spritesheet_collage import (
     Geometry,
+    all_grid_frames,
     compute_grid,
     extract_frames,
     frame_box,
@@ -119,6 +120,21 @@ class ExtractFramesTests(unittest.TestCase):
     def test_negative_coordinate_raises(self):
         with self.assertRaises(ValueError):
             extract_frames(self.image, [(-1, 0)], (2, 2), self.geom)
+
+
+class AllGridFramesTests(unittest.TestCase):
+    def test_row_major_order(self):
+        # 3 cols x 2 rows: top row left-to-right, then the next row.
+        self.assertEqual(
+            all_grid_frames((3, 2)),
+            [(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (2, 1)],
+        )
+
+    def test_single_cell(self):
+        self.assertEqual(all_grid_frames((1, 1)), [(0, 0)])
+
+    def test_count_matches_grid(self):
+        self.assertEqual(len(all_grid_frames((8, 8))), 64)
 
 
 class SafePrefixTests(unittest.TestCase):

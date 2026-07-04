@@ -7,7 +7,7 @@ creating an animation spritesheet strip.
 ## How it works
 
 The spritesheet is treated as a grid of equally sized frames, with an optional **margin** (border on all four edges) 
-and **separation** (gap between adjacentframes):
+and **separation** (gap between adjacent frames):
 
 ```
 frame at (col, row) top-left = ( margin_x + col * (frame_x + sep_x),
@@ -36,6 +36,20 @@ uv run python spritesheet_collage.py test_spritesheet_64x64.png \
 This writes `frame_001__0_0.png` … `frame_004__3_0.png` plus a `collage.png` strip (`384x64`). 
 Collage references are **1-based** (`1` = the first extracted frame) to make animation sequences easy to read.
 
+### Extract every frame
+
+Pass `--all-frames` instead of `--frames` to cut the whole grid without listing coordinates:
+
+```bash
+uv run python spritesheet_collage.py test_spritesheet_64x64.png \
+    --frame-x 64 --frame-y 64 --all-frames
+```
+
+Frames are extracted in **row-major (reading) order**: the top row left-to-right, then the next row down, so `frame_001`
+is `[0,0]`, `frame_002` is `[1,0]`, and the numbering (and any 1-based `--collage` references) line up with the sheet
+layout. If both `--all-frames` and `--frames` are given, `--all-frames` wins. In interactive mode you are asked 
+*"Extract all frames?"* before the coordinate prompt.
+
 ### Interactive mode
 
 Run with no arguments (or with some required values missing) to be prompted for each setting.
@@ -55,12 +69,15 @@ uv run python spritesheet_collage.py
 | `--margin-x`, `--margin-y`                   | `0`          | Border around the whole sheet               |
 | `--sep-x`, `--sep-y`                         | `0`          | Gap between adjacent frames                 |
 | `--frames`                                   | - (required) | Frames to cut, e.g. `"[[0,0],[1,0]]"`       |
+| `--all-frames`                               | off          | Cut every grid frame (overrides `--frames`) |
 | `--collage`                                  | none         | 1-based stitch sequence, e.g. `"[1,2,3,2]"` |
 | `--save-individual` / `--no-save-individual` | on           | Save each cut frame as a PNG                |
 | `--frame-prefix`                             | `frame`      | Individual frame filename prefix            |
 | `--collage-prefix`                           | `collage`    | Collage filename prefix                     |
 | `--output-dir`                               | `.`          | Directory for output files                  |
 | `-v`, `--verbose`                            | off          | Print per-frame detail                      |
+
+Either `--frames` or `--all-frames` is required.
 
 Output filenames: `{frame-prefix}_{NNN}__{x}_{y}.png` for individual frames and `{collage-prefix}.png` for the collage.
 
